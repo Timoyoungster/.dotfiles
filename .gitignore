@@ -8,5 +8,7 @@
 !foot/*
 !/tmux
 !tmux/*
+!/wireplumber
+!wireplumber/*
 !/zsh
 !zsh/*
