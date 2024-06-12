@@ -1,7 +1,12 @@
 *
 !/.gitignore
+!/nvim
 !nvim/*
+!/hypr
 !hypr/*
+!/foot
 !foot/*
+!/tmux
 !tmux/*
+!/zsh
 !zsh/*
