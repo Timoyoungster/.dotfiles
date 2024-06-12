@@ -10,6 +10,8 @@
 !tmux/*
 !/wireplumber
 !wireplumber/*
+!/zathura
+!zathura/*
 !/zsh
 !zsh/*
 
