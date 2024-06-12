@@ -12,3 +12,7 @@
 !wireplumber/*
 !/zsh
 !zsh/*
+
+# special handling for nchat
+!/nchat
+!/nchat/key.conf
