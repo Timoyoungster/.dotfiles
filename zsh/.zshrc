@@ -97,6 +97,9 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' menu select
 setopt MENU_COMPLETE
 
+# autocomplete dots
+setopt globdots
+
 # custom prompt
 setopt promptsubst
 autoload -Uz vcs_info
