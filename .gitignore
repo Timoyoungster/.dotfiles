@@ -1,0 +1,7 @@
+*
+!/.gitignore
+!nvim/*
+!hypr/*
+!foot/*
+!tmux/*
+!zsh/*
