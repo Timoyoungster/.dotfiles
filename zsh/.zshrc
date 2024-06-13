@@ -115,6 +115,9 @@ PROMPT='%F{yellow}%(1j.(%j jobs) .)%f%. %F{red}$vcs_info_msg_0_%f%% '
 PATH="$PATH:/home/timo/go/bin"
 PATH="$PATH:./node_modules/.bin"
 
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
 # Created by `pipx` on 2024-05-27 16:55:57
 export PATH="$PATH:/home/timo/.local/bin"
 
