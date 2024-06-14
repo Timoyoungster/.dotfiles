@@ -1,5 +1,6 @@
 alias lx="ls -a -h -l --color=always --group-directories-first -v"
 alias lp="ls -a -h --color=always --group-directories-first -v"
+alias lxs="ls -a -h -l --color=always --group-directories-first -v | less -R"
 alias gs="git status"
 alias gd="git diff"
 alias ga="git add --all"
@@ -10,6 +11,7 @@ alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="cd ~/.config/nvim; nvim .;"
 alias res="fg"
 alias hl='Hyprland'
+alias imgcat='img2sixel'
 
 eval $(thefuck --alias)
 
@@ -99,6 +101,10 @@ setopt MENU_COMPLETE
 
 # autocomplete dots
 setopt globdots
+
+# reverse search
+bindkey -v
+bindkey '^R' history-incremental-pattern-search-backward
 
 # custom prompt
 setopt promptsubst
