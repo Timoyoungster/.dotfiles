@@ -9,6 +9,7 @@ alias gp="git push"
 alias gpull="git pull"
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="cd ~/.config/nvim; nvim .;"
+alias dotfiles="cd ~/.config; nvim .;"
 alias res="fg"
 alias hl='Hyprland'
 alias imgcat='img2sixel'
