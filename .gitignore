@@ -14,6 +14,8 @@
 !zathura/*
 !/zsh
 !zsh/*
+!/scripts
+!scripts/*
 
 # special handling for nchat
 !/nchat
