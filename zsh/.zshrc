@@ -92,6 +92,9 @@ function zmk_build_both () {
   west build -d build/right -b nice_nano_v2 -- -DSHIELD=cradio_right -DZMK_CONFIG="/home/timo/github/zmk-config/config" -DZMK_EXTRA_MODULES="/home/timo/github/zmk-config/"
 }
 
+# autocomplete dots
+setopt globdots
+
 # case insensitive completion
 autoload -Uz +X compinit && compinit
 
@@ -99,13 +102,19 @@ autoload -Uz +X compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 setopt MENU_COMPLETE
+setopt no_list_ambiguous
 
-# autocomplete dots
-setopt globdots
-
-# reverse search
+# vim mode
 bindkey -v
+export KEYTIMEOUT=1
+
+# reactivate reverse search
 bindkey '^R' history-incremental-pattern-search-backward
+
+# vim-style completion navigation
+bindkey '^N' expand-or-complete
+bindkey '^P' reverse-menu-complete
+bindkey '^Y' accept-line
 
 # custom prompt
 setopt promptsubst
