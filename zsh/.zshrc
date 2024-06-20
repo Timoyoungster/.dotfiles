@@ -13,6 +13,7 @@ alias dotfiles="cd ~/.config; nvim .;"
 alias res="fg"
 alias hl='Hyprland'
 alias imgcat='img2sixel'
+alias clock='tclock' # cargo install clock-tui
 
 eval $(thefuck --alias)
 
