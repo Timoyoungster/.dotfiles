@@ -20,3 +20,4 @@
 # special handling for nchat
 !/nchat
 !/nchat/key.conf
+!/nchat/ui.conf
