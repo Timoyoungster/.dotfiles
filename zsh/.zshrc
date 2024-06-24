@@ -14,6 +14,7 @@ alias res="fg"
 alias hl='Hyprland'
 alias imgcat='img2sixel'
 alias clock='tclock' # cargo install clock-tui
+alias weather='curl wttr.in/48.11,14.19'
 
 eval $(thefuck --alias)
 
