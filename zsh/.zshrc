@@ -6,7 +6,6 @@ alias gd="git diff"
 alias ga="git add --all"
 alias gc="git commit"
 alias gp="git push"
-alias gb="git checkout"
 alias gpull="git pull"
 alias zshconfig="nvim ~/.zshrc"
 alias nvimconfig="cd ~/.config/nvim; nvim .;"
@@ -35,6 +34,15 @@ function uni () {
     fi
   else
     cd ~/github/jku
+  fi
+}
+
+function gb () {
+  if [ $# -eq 0 ]
+  then
+    git branch
+  else
+    git checkout $@
   fi
 }
 
