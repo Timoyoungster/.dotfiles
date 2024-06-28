@@ -1,3 +1,72 @@
+##############
+# Completion #
+##############
+
+# autocomplete dots
+setopt globdots
+
+# case insensitive completion
+autoload -Uz +X compinit && compinit
+
+## case insensitive path-completion
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' menu select
+setopt MENU_COMPLETE
+setopt no_list_ambiguous
+
+# fzf
+source ~/.config/zsh/fzf-stuff.zsh
+
+############
+# Bindings #
+############
+
+# vim mode
+bindkey -v
+export KEYTIMEOUT=1
+
+# tmux sessionizer
+bindkey -s '^F' "tmux-sessionizer\n"
+
+# vim-style completion navigation
+bindkey '^N' expand-or-complete
+bindkey '^P' reverse-menu-complete
+bindkey '^Y' accept-line
+
+##########
+# Prompt #
+##########
+
+setopt promptsubst
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '?'
+zstyle ':vcs_info:git:*' stagedstr '+'
+zstyle ':vcs_info:git:*' formats '(%b%c%u) '
+PROMPT='%F{yellow}%(1j.(%j jobs) .)%f%. %F{red}$vcs_info_msg_0_%f%% '
+
+########
+# PATH #
+########
+
+export PATH=$PATH:$HOME/.cargo/env
+export PATH=$PATH:/home/timo/go/bin
+export PATH=$PATH:./node_modules/.bin
+export PATH=~/.config/scripts:$PATH
+
+export VISUAL=nvim
+export EDITOR=$VISUAL
+
+# Created by `pipx` on 2024-05-27 16:55:57
+export PATH="$PATH:/home/timo/.local/bin"
+
+###########
+# Aliases #
+###########
+
 alias lx="ls -a -h -l --color=always --group-directories-first -v"
 alias lp="ls -a -h --color=always --group-directories-first -v"
 alias lxs="ls -a -h -l --color=always --group-directories-first -v | less -R"
@@ -5,6 +74,8 @@ alias gs="git status"
 alias gd="git diff"
 alias ga="git add --all"
 alias gc="git commit"
+alias gco="git checkout"
+alias gb="git branch"
 alias gp="git push"
 alias gpull="git pull"
 alias zshconfig="nvim ~/.zshrc"
@@ -34,15 +105,6 @@ function uni () {
     fi
   else
     cd ~/github/jku
-  fi
-}
-
-function gb () {
-  if [ $# -eq 0 ]
-  then
-    git branch
-  else
-    git checkout $@
   fi
 }
 
@@ -102,49 +164,4 @@ function zmk_build_both () {
   west build -d build/left -b nice_nano_v2 -- -DSHIELD=cradio_left -DZMK_CONFIG="/home/timo/github/zmk-config/config" -DZMK_EXTRA_MODULES="/home/timo/github/zmk-config/"
   west build -d build/right -b nice_nano_v2 -- -DSHIELD=cradio_right -DZMK_CONFIG="/home/timo/github/zmk-config/config" -DZMK_EXTRA_MODULES="/home/timo/github/zmk-config/"
 }
-
-# autocomplete dots
-setopt globdots
-
-# case insensitive completion
-autoload -Uz +X compinit && compinit
-
-## case insensitive path-completion
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' menu select
-setopt MENU_COMPLETE
-setopt no_list_ambiguous
-
-# vim mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# reactivate reverse search
-bindkey '^R' history-incremental-pattern-search-backward
-
-# vim-style completion navigation
-bindkey '^N' expand-or-complete
-bindkey '^P' reverse-menu-complete
-bindkey '^Y' accept-line
-
-# custom prompt
-setopt promptsubst
-autoload -Uz vcs_info
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' unstagedstr '?'
-zstyle ':vcs_info:git:*' stagedstr '+'
-zstyle ':vcs_info:git:*' formats '(%b%c%u) '
-PROMPT='%F{yellow}%(1j.(%j jobs) .)%f%. %F{red}$vcs_info_msg_0_%f%% '
-
-PATH="$PATH:/home/timo/go/bin"
-PATH="$PATH:./node_modules/.bin"
-
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-# Created by `pipx` on 2024-05-27 16:55:57
-export PATH="$PATH:/home/timo/.local/bin"
 
