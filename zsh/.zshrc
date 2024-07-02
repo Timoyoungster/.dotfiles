@@ -27,7 +27,7 @@ export EDITOR=$VISUAL
 bindkey -e
 
 # tmux sessionizer
-bindkey -s '^F' "tmux-sessionizer\n"
+bindkey -s '^F' "^Utmux-sessionizer\n"
 
 # vim-style completion navigation
 bindkey '^N' expand-or-complete
