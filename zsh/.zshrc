@@ -21,9 +21,10 @@ source ~/.config/zsh/fzf-stuff.zsh
 # Bindings #
 ############
 
-# vim mode
-bindkey -v
-export KEYTIMEOUT=1
+# nvim editor but no zsh-vi mode
+export VISUAL=nvim
+export EDITOR=$VISUAL
+bindkey -e
 
 # tmux sessionizer
 bindkey -s '^F' "tmux-sessionizer\n"
@@ -56,9 +57,6 @@ export PATH=$PATH:$HOME/.cargo/env
 export PATH=$PATH:/home/timo/go/bin
 export PATH=$PATH:./node_modules/.bin
 export PATH=~/.config/scripts:$PATH
-
-export VISUAL=nvim
-export EDITOR=$VISUAL
 
 # Created by `pipx` on 2024-05-27 16:55:57
 export PATH="$PATH:/home/timo/.local/bin"

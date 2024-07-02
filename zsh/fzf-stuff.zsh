@@ -22,18 +22,8 @@ bindkey -M viins '^T' fzf-file-widget
 fzf-history-widget() {
   setopt extendedglob
 
-  FC_ARGS="-l"
-  CANDIDATE_LEADING_FIELDS=2
-
-  if (( ! $ZSH_FZF_HISTORY_SEARCH_EVENT_NUMBERS )); then
-    FC_ARGS+=" -n"
-    ((CANDIDATE_LEADING_FIELDS--))
-  fi
-
-  if (( $ZSH_FZF_HISTORY_SEARCH_DATES_IN_SEARCH )); then
-    FC_ARGS+=" -i"
-    ((CANDIDATE_LEADING_FIELDS+=2))
-  fi
+  FC_ARGS="-l -n"
+  CANDIDATE_LEADING_FIELDS=1
 
   history_cmd="fc ${=FC_ARGS} -1 0 | awk '!seen[\$0]++'"
 
