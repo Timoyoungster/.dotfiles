@@ -42,9 +42,7 @@ fzf-history-widget() {
       BUFFER="${(j| && |)candidates}"
     fi
     zle vi-fetch-history -n $BUFFER
-    if [ -n "${ZSH_FZF_HISTORY_SEARCH_END_OF_LINE}" ]; then
-      zle end-of-line
-    fi
+    zle end-of-line
   fi
 }
 
