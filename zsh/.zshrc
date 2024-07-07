@@ -12,6 +12,7 @@ autoload -Uz +X compinit && compinit
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 setopt MENU_COMPLETE
+setopt DVORAK # spelling mistakes wrt. dvorak layout
 setopt no_list_ambiguous
 
 # fzf
@@ -65,8 +66,8 @@ export PATH="$PATH:/home/timo/.local/bin"
 # Aliases #
 ###########
 
-alias lx="ls -a -h -l --color=always --group-directories-first -v"
-alias lp="ls -a -h --color=always --group-directories-first -v"
+alias lx="ls -a -h -l --color=always -v"
+alias lp="ls -a -h --color=always -v"
 alias lxs="ls -a -h -l --color=always --group-directories-first -v | less -R"
 alias gs="git status"
 alias gd="git diff"
@@ -84,6 +85,7 @@ alias hl='Hyprland'
 alias imgcat='img2sixel'
 alias clock='tclock' # cargo install clock-tui
 alias weather='curl wttr.in/48.11,14.19'
+alias hextobin='python3 ~/.config/scripts/hex_to_bin.py $@'
 
 eval $(thefuck --alias)
 
