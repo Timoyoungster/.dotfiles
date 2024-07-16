@@ -1,3 +1,48 @@
+#####################################################
+# CTRL-F - new tmux session with selected directory #
+#####################################################
+
+tmux-sessionizer() {
+  # restore fd's
+  exec </dev/tty
+  exec <&1
+
+  if [[ $# -eq 1 ]]; then
+    selected=$1
+  else
+    selected=$(find $SEARCHPATHS -mindepth 0 -maxdepth 1 -type d | fzf --bind "ctrl-y:accept")
+  fi
+
+  if [[ -z $selected ]]; then
+    zle reset-prompt
+    return 0
+  fi
+
+  selected_name=$(basename "$selected" | tr . _ | head -c 8)
+  tmux_running=$(pgrep tmux)
+
+  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    zle reset-prompt
+    return 0
+  fi
+
+  if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+  fi
+
+  if [[ -z $TMUX ]]; then
+    tmux new -As $selected_name
+  else
+    tmux switch-client -t $selected_name
+  fi
+  zle reset-prompt
+}
+
+zle     -N            tmux-sessionizer
+bindkey -M emacs '^F' tmux-sessionizer
+bindkey -M vicmd '^F' tmux-sessionizer
+bindkey -M viins '^F' tmux-sessionizer
 
 #######################################
 # CTRL-T - cd into selected directory #
@@ -5,9 +50,9 @@
 
 fzf-file-widget() {
   setopt localoptions pipefail no_aliases 2> /dev/null
-  f=$(find ~/github ~/.config/* ~/downloads/* ~/ ~/github/jku ~/github/project-wasteland/* ~/github/zmk-config/* -mindepth 0 -maxdepth 2 -type d | fzf --bind "ctrl-y:accept")
+  f=$(find $SEARCHPATHS -mindepth 0 -maxdepth 2 -type d | fzf --bind "ctrl-y:accept")
   if [ -z $f ]; then; else
-    nvim $f
+    cd $f
   fi
   zle reset-prompt
 }
@@ -17,8 +62,6 @@ bindkey -M emacs '^T' fzf-file-widget
 bindkey -M vicmd '^T' fzf-file-widget
 bindkey -M viins '^T' fzf-file-widget
 
-# TODO: implement history search
-#
 fzf-history-widget() {
   setopt extendedglob
 
@@ -44,6 +87,7 @@ fzf-history-widget() {
     zle vi-fetch-history -n $BUFFER
     zle end-of-line
   fi
+  zle reset-prompt
 }
 
 zle     -N            fzf-history-widget

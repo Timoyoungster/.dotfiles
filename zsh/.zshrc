@@ -1,3 +1,9 @@
+###########
+# Globals #
+###########
+
+export SEARCHPATHS=( ~/github ~/.config/* ~/downloads/* ~/ ~/github/jku ~/github/project-wasteland/* ~/github/zmk-config/* )
+
 ##############
 # Completion #
 ##############
@@ -15,9 +21,6 @@ setopt MENU_COMPLETE
 setopt DVORAK # spelling mistakes wrt. dvorak layout
 setopt no_list_ambiguous
 
-# fzf
-source ~/.config/zsh/fzf-stuff.zsh
-
 ############
 # Bindings #
 ############
@@ -27,8 +30,8 @@ export VISUAL=nvim
 export EDITOR=$VISUAL
 bindkey -e
 
-# tmux sessionizer
-bindkey -s '^F' "^Utmux-sessionizer\n"
+# fzf
+source ~/.config/zsh/fzf-stuff.zsh
 
 # vim-style completion navigation
 bindkey '^N' expand-or-complete
