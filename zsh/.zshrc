@@ -3,6 +3,7 @@
 ###########
 
 export SEARCHPATHS=( ~/github ~/.config/* ~/downloads/* ~/ ~/github/jku ~/github/project-wasteland/* ~/github/zmk-config/* )
+export WWW_HOME=www.duckduckgo.com
 
 ##############
 # Completion #
@@ -90,6 +91,7 @@ alias clock='tclock' # cargo install clock-tui
 alias weather='curl wttr.in/48.11,14.19'
 alias hextobin='python3 ~/.config/scripts/hex_to_bin.py $@'
 alias work='virtualboxvm --startvm "Windows"'
+alias wm='w3m -v www.duckduckgo.com'
 
 eval $(thefuck --alias)
 
