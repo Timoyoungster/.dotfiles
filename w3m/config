@@ -29,7 +29,7 @@ auto_image 1
 max_load_image 4
 ext_image_viewer 1
 image_scale 100
-inline_img_protocol 1
+inline_img_protocol 0
 imgdisplay w3mimgdisplay
 image_map_list 1
 fold_line 0
