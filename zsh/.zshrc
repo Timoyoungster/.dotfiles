@@ -39,6 +39,9 @@ bindkey '^N' expand-or-complete
 bindkey '^P' reverse-menu-complete
 bindkey '^Y' accept-line
 
+# unset buggy ^S
+bindkey -r "^S"
+
 ##########
 # Prompt #
 ##########
@@ -176,3 +179,5 @@ if [[ -f ~/.config/zsh/ssh-stuff ]]
 then
   source ~/.config/zsh/ssh-stuff
 fi
+
+source ~/.config/zsh/password-stuff

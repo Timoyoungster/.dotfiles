@@ -32,3 +32,6 @@
 
 # never show the ssh stuff
 /zsh/ssh-stuff
+
+# never show the password stuff
+/zsh/password-stuff
