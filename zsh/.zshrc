@@ -39,6 +39,9 @@ bindkey '^N' expand-or-complete
 bindkey '^P' reverse-menu-complete
 bindkey '^Y' accept-line
 
+# unset buggy ^S
+bindkey -r "^S"
+
 ##########
 # Prompt #
 ##########
@@ -92,6 +95,7 @@ alias weather='curl wttr.in/48.11,14.19'
 alias hextobin='python3 ~/.config/scripts/hex_to_bin.py $@'
 alias work='virtualboxvm --startvm "Windows"'
 alias wm='w3m -v www.duckduckgo.com'
+alias duck='cat ~/.config/zsh/duck'
 
 eval $(thefuck --alias)
 
@@ -175,3 +179,5 @@ if [[ -f ~/.config/zsh/ssh-stuff ]]
 then
   source ~/.config/zsh/ssh-stuff
 fi
+
+source ~/.config/zsh/password-stuff

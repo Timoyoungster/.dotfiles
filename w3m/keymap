@@ -176,6 +176,10 @@ keymap M-b BOOKMARK
 keymap M-m ADD_BOOKMARK
 keymap M-h GOTO_HOME
 
+# Images
+keymap i VIEW_IMAGE
+keymap M-i SAVE_IMAGE
+
 # Commands
 keymap :: COMMAND
 keymap :help HELP
