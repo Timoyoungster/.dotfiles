@@ -2,7 +2,7 @@
 # Globals #
 ###########
 
-export SEARCHPATHS=( ~/github ~/.config/* ~/downloads/* ~/ ~/github/jku ~/github/project-wasteland/* ~/github/zmk-config/* )
+export SEARCHPATHS=( ~/github ~/.config/* ~/downloads/* ~ ~/github/jku ~/github/project-wasteland/* ~/github/zmk-config/* )
 export WWW_HOME=www.duckduckgo.com
 
 ##############
