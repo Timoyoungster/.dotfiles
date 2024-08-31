@@ -32,7 +32,7 @@ export EDITOR=$VISUAL
 bindkey -e
 
 # fzf
-source ~/.config/zsh/fzf-stuff.zsh
+source ~/.config/zsh/fzf-stuff
 
 # vim-style completion navigation
 bindkey '^N' expand-or-complete
