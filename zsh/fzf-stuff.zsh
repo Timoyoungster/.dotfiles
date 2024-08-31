@@ -10,7 +10,7 @@ tmux-sessionizer() {
   if [[ $# -eq 1 ]]; then
     selected=$1
   else
-    selected=$(find $SEARCHPATHS -mindepth 0 -maxdepth 1 -type d | fzf --bind "ctrl-y:accept")
+    selected=$((find $SEARCHPATHS -mindepth 0 -maxdepth 1 -type d && ( tmux ls | cut -d : -f 1 ) ) | fzf --bind "ctrl-y:accept")
   fi
 
   if [[ -z $selected ]]; then
