@@ -98,6 +98,7 @@ alias wm='w3m -v www.duckduckgo.com'
 alias duck='cat ~/.config/zsh/duck'
 alias gcc-arm='arm-none-eabi-gcc'
 alias gcc-arm-no='arm-none-eabi-gcc -static -nostdlib'
+alias gdb-arm='arm-none-eabi-gdb'
 
 eval $(thefuck --alias)
 
