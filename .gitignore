@@ -18,6 +18,8 @@
 !scripts/*
 !/ex
 !ex/*
+!/git
+!git/*
 
 # special handling for nchat
 !/nchat
