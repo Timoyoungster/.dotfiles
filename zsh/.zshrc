@@ -90,7 +90,7 @@ alias nvimconfig="cd ~/.config/nvim"
 alias dotfiles="cd ~/.config"
 alias res="fg"
 alias hl='Hyprland'
-alias imgcat='img2sixel'
+alias imgcat='img2sixel' // better: viu
 alias clock='tclock' # cargo install clock-tui
 alias weather='curl wttr.in/48.11,14.19'
 alias hextobin='python3 ~/.config/scripts/hex_to_bin.py $@'
@@ -103,6 +103,11 @@ alias cpueu='wl-copy Ü'
 alias cpoe='wl-copy ö'
 alias cpae='wl-copy ä'
 alias cpue='wl-copy ü'
+alias gcc-arm='arm-none-eabi-gcc'
+alias gcc-arm-no='arm-none-eabi-gcc -static -nostdlib'
+alias gdb-arm='arm-none-eabi-gdb'
+alias objdump='objdump -M intel --no-show-raw-insn'
+alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
 
 eval $(thefuck --alias)
 
@@ -127,15 +132,6 @@ function uni () {
 
 function zat () {
   zathura $* &; disown
-}
-
-function xdump () {
-  if [ $# -eq 2 ]
-  then
-    objdump -D $1 > $2
-  else
-    objdump -D --disassembler-color=extended-color $1 | less -r
-  fi
 }
 
 function tx () {

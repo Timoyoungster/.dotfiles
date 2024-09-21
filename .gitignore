@@ -16,6 +16,8 @@
 !zsh/*
 !/scripts
 !scripts/*
+!/ex
+!ex/*
 
 # special handling for nchat
 !/nchat
