@@ -73,8 +73,9 @@ export PATH="$PATH:/home/timo/.local/bin"
 # Aliases #
 ###########
 
-alias lx="ls -a -h -l --color=always -v"
-alias lp="ls -a -h --color=always -v"
+alias sudo='sudo ' # make aliases work with sudo http://www.linuxcommand.org/lc3_man_pages/aliash.html
+alias ll="ls -a -h -l --color=always -v"
+alias lx="ls -a -h --color=always -v"
 alias lxs="ls -a -h -l --color=always --group-directories-first -v | less -R"
 alias gs="git status"
 alias gd="git diff"
