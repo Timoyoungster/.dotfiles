@@ -99,6 +99,7 @@ alias duck='cat ~/.config/zsh/duck'
 alias gcc-arm='arm-none-eabi-gcc'
 alias gcc-arm-no='arm-none-eabi-gcc -static -nostdlib'
 alias gdb-arm='arm-none-eabi-gdb'
+alias objdump='objdump -M intel --no-show-raw-insn'
 
 eval $(thefuck --alias)
 
@@ -123,15 +124,6 @@ function uni () {
 
 function zat () {
   zathura $* &; disown
-}
-
-function xdump () {
-  if [ $# -eq 2 ]
-  then
-    objdump -D $1 > $2
-  else
-    objdump -D --disassembler-color=extended-color $1 | less -r
-  fi
 }
 
 function tx () {
