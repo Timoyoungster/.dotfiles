@@ -97,6 +97,12 @@ alias hextobin='python3 ~/.config/scripts/hex_to_bin.py $@'
 alias work='virtualboxvm --startvm "Windows"'
 alias wm='w3m -v www.duckduckgo.com'
 alias duck='cat ~/.config/zsh/duck'
+alias cpoeu='wl-copy Ö'
+alias cpaeu='wl-copy Ä'
+alias cpueu='wl-copy Ü'
+alias cpoe='wl-copy ö'
+alias cpae='wl-copy ä'
+alias cpue='wl-copy ü'
 
 eval $(thefuck --alias)
 
