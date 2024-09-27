@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 #####################################################
-# CTRL-F - new tmux session with selected directory #
+# CTRL-T - new tmux session with selected directory #
 #####################################################
 
 tmux-sessionizer() {
@@ -42,12 +42,12 @@ tmux-sessionizer() {
 }
 
 zle     -N            tmux-sessionizer
-bindkey -M emacs '^F' tmux-sessionizer
-bindkey -M vicmd '^F' tmux-sessionizer
-bindkey -M viins '^F' tmux-sessionizer
+bindkey -M emacs '^T' tmux-sessionizer
+bindkey -M vicmd '^T' tmux-sessionizer
+bindkey -M viins '^T' tmux-sessionizer
 
 #######################################
-# CTRL-T - cd into selected directory #
+# CTRL-S - cd into selected directory #
 #######################################
 
 fzf-file-widget() {
@@ -60,9 +60,9 @@ fzf-file-widget() {
 }
 
 zle     -N            fzf-file-widget
-bindkey -M emacs '^T' fzf-file-widget
-bindkey -M vicmd '^T' fzf-file-widget
-bindkey -M viins '^T' fzf-file-widget
+bindkey -M emacs '^S' fzf-file-widget
+bindkey -M vicmd '^S' fzf-file-widget
+bindkey -M viins '^S' fzf-file-widget
 
 fzf-history-widget() {
   setopt extendedglob
@@ -96,3 +96,13 @@ zle     -N            fzf-history-widget
 bindkey -M emacs '^R' fzf-history-widget
 bindkey -M vicmd '^R' fzf-history-widget
 bindkey -M viins '^R' fzf-history-widget
+
+run-fg() {
+  fg
+  zle reset-prompt
+}
+
+zle     -N            run-fg
+bindkey -M emacs '^Z' run-fg
+bindkey -M vicmd '^Z' run-fg
+bindkey -M viins '^Z' run-fg

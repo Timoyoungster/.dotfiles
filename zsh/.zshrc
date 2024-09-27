@@ -26,6 +26,9 @@ setopt no_list_ambiguous
 # Bindings #
 ############
 
+# disable software flow control thingy
+stty -ixon
+
 # nvim editor but no zsh-vi mode
 export VISUAL=nvim
 export EDITOR=$VISUAL
@@ -38,9 +41,6 @@ source ~/.config/zsh/fzf-stuff
 bindkey '^N' expand-or-complete
 bindkey '^P' reverse-menu-complete
 bindkey '^Y' accept-line
-
-# unset buggy ^S
-bindkey -r "^S"
 
 ##########
 # Prompt #
