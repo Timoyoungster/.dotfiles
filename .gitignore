@@ -20,6 +20,8 @@
 !ex/*
 !/git
 !git/*
+!/mako
+!mako/*
 
 # special handling for nchat
 !/nchat
