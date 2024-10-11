@@ -112,22 +112,12 @@ alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
 
 eval $(thefuck --alias)
 
-pyvenv_projects=(
-  "pip" 
-  "hoai" 
-  "algodat"
-)
-
 function uni () {
   if [ $# -eq 1 ]
   then
-    cd ~/github/jku/semester3/$1/*(/om[1])
-    if [ $pyvenv_projects[(i)$1] ]
-    then
-      source ~/.pythonvenv/uni/bin/activate || return
-    fi
+    tmux new -As uni -c ~/github/jku/semester3/$1/*(/om[1])
   else
-    cd ~/github/jku
+    tmux new -As uni -c ~/github/jku
   fi
 }
 
