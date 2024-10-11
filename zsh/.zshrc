@@ -121,7 +121,7 @@ pyvenv_projects=(
 function uni () {
   if [ $# -eq 1 ]
   then
-    cd ~/github/jku/semester2/$1/*(/om[1])
+    cd ~/github/jku/semester3/$1/*(/om[1])
     if [ $pyvenv_projects[(i)$1] ]
     then
       source ~/.pythonvenv/uni/bin/activate || return
