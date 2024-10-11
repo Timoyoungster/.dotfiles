@@ -121,6 +121,15 @@ function uni () {
   fi
 }
 
+function create-submission () {
+  if [[ $PWD == *"/semester3/spv/a"* ]]
+  then
+    NUM=${${PWD:(-2)}//[^0-9]/}
+    cp a${NUM}_jukit.ipynb Assignment_${NUM}_TimoPrömer_k12005204.ipynb
+    mv a${NUM}_jukit.pdf Assignment_${NUM}_TimoPrömer_k12005204.pdf
+  fi
+}
+
 function zat () {
   zathura $* &; disown
 }
