@@ -127,6 +127,17 @@ function create-submission () {
     NUM=${${PWD:(-2)}//[^0-9]/}
     cp a${NUM}_jukit.ipynb Assignment_${NUM}_TimoPrömer_k12005204.ipynb
     mv a${NUM}_jukit.pdf Assignment_${NUM}_TimoPrömer_k12005204.pdf
+  elif [[ $PWD == *"/semester3/ai/a"* ]]
+  then
+    NUM=${${PWD:(-2)}//[^0-9]/}
+    a=(*_jukit.ipynb)
+    if [[ ${#a} -eq 1 ]]
+    then
+      cp *_jukit.ipynb a${NUM}_k12005204.ipynb
+      mv *_jukit.pdf a${NUM}_k12005204.pdf
+    else
+      echo "${#a} files found!"
+    fi
   fi
 }
 
