@@ -138,6 +138,13 @@ function create-submission () {
     else
       echo "${#a} files found!"
     fi
+  elif [[ $PWD == *"/semester3/algodat/a"* ]]
+  then
+    for file in *.md
+    do
+      mdpdf $file
+    done
+    zip k12005204.zip [[:lower:]]*.pdf(N) *.py(N)
   fi
 }
 
