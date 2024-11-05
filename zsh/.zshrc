@@ -4,6 +4,7 @@
 
 export SEARCHPATHS=( ~/github ~/.config/* ~/downloads/* ~ ~/github/jku ~/github/project-wasteland/* ~/github/zmk-config/* ~/github/project-wasteland/asm/*)
 export WWW_HOME=www.duckduckgo.com
+export SEMESTER=iii
 
 ##############
 # Completion #
@@ -113,21 +114,28 @@ alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
 eval $(thefuck --alias)
 
 function uni () {
+  DIR=""
   if [ $# -eq 1 ]
   then
-    tmux new -As uni -c ~/github/jku/semester3/$1/*(/om[1])
+    DIR=~/github/jku/$SEMESTER/$1/*(/om[1])
   else
-    tmux new -As uni -c ~/github/jku
+    DIR=~/github/jku
+  fi
+  if [[ -z $TMUX ]]; then
+    tmux new -As uni -c $~DIR
+  else
+    tmux new -ds uni -c $~DIR 2> /dev/null
+    tmux switch-client -t uni
   fi
 }
 
 function create-submission () {
-  if [[ $PWD == *"/semester3/spv/a"* ]]
+  if [[ $PWD == *"/$SEMESTER/spv/a"* ]]
   then
     NUM=${${PWD:(-2)}//[^0-9]/}
     cp a${NUM}_jukit.ipynb Assignment_${NUM}_TimoPrömer_k12005204.ipynb
     mv a${NUM}_jukit.pdf Assignment_${NUM}_TimoPrömer_k12005204.pdf
-  elif [[ $PWD == *"/semester3/ai/a"* ]]
+  elif [[ $PWD == *"/$SEMESTER/ai/a"* ]]
   then
     NUM=${${PWD:(-2)}//[^0-9]/}
     a=(*_jukit.ipynb)
@@ -138,7 +146,7 @@ function create-submission () {
     else
       echo "${#a} files found!"
     fi
-  elif [[ $PWD == *"/semester3/algodat/a"* ]]
+  elif [[ $PWD == *"/$SEMESTER/algodat/a"* ]]
   then
     for file in *.md
     do
@@ -157,7 +165,12 @@ function tx () {
   then
     tmux list-sessions
   else
-    tmux new -As $1
+    if [[ -z $TMUX ]]; then
+      tmux new -As $1
+   else
+      tmux new -ds $1 2> /dev/null
+      tmux switch-client -t $1
+    fi
   fi
 }
 
