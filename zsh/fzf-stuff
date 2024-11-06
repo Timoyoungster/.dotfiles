@@ -23,19 +23,10 @@ tmux-sessionizer() {
   selected_name=$(basename "$selected" | tr -d . | head -c 8)
   tmux_running=$(pgrep tmux)
 
-  if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    tmux new-session -s $selected_name -c $selected
-    zle reset-prompt
-    return 0
-  fi
-
-  if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
-  fi
-
   if [[ -z $TMUX ]]; then
-    tmux new -As $selected_name
+    tmux new -As $selected_name -c $selected
   else
+    tmux new -ds $selected_name -c $selected 2> /dev/null
     tmux switch-client -t $selected_name
   fi
   zle reset-prompt
