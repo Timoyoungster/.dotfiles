@@ -36,6 +36,10 @@
 !/w3m/cgi-bin
 !w3m/cgi-bin/*
 
+# special handling for w3m
+!/mutt/muttrc
+!mutt/
+
 # never show the ssh stuff
 /zsh/ssh-stuff
 
