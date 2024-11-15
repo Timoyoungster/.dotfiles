@@ -110,6 +110,7 @@ alias gcc-arm-no='arm-none-eabi-gcc -static -nostdlib'
 alias gdb-arm='arm-none-eabi-gdb'
 alias objdump='objdump -M intel --no-show-raw-insn'
 alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
+alias draw='lorien'
 
 eval $(thefuck --alias)
 
