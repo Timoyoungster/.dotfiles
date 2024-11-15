@@ -157,10 +157,6 @@ function create-submission () {
   fi
 }
 
-function zat () {
-  zathura $* &; disown
-}
-
 function tx () {
   if [ $# -eq 0 ]
   then
