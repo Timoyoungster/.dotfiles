@@ -73,7 +73,7 @@ macro index,pager mf "<save-message>?"                    "move to mailbox..."
 # ----------------------------------------------------
 
 bind index,pager    a   group-reply
-bind index          m   mail
+bind index          \Cm   mail
 
 # macro index,pager    gx  "<pipe-message>urlview<Enter>"                                   "call urlview to extract URLs out of a message"
 # macro attach,compose gx  "<pipe-entry>urlview<Enter>"                                     "call urlview to extract URLs out of a message"
