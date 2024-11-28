@@ -25,10 +25,10 @@ set delete = yes
 # Navigation
 # ----------------------------------------------------
 
-# bind generic             z         noop
 bind index,pager,attach  g         noop
+bind index,pager         s         noop
+# bind generic             z         noop
 # bind index,pager         d         noop
-# bind index,pager         s         noop
 # bind index,pager         c         noop
 # bind generic,pager       t         noop
 # bind generic,index,pager <Space>   noop
@@ -63,17 +63,17 @@ macro index,pager go "<change-folder>=Other<enter>"       "open Other"
 macro index,pager gf "<change-folder>?"                   "open mailbox..."
 
 # move to folder...
-macro index,pager mi "<save-message>=INBOX<enter>y"       "move to inbox"
-macro index,pager mw "<save-message>=Wichtig<enter>y"     "move to important"
-macro index,pager mj "<save-message>=JKU<enter>y"         "move to JKU"
-macro index,pager mo "<save-message>=Other<enter>y"       "move to Other"
-macro index,pager mf "<save-message>?"                    "move to mailbox..."
+macro index,pager si "<save-message>=INBOX<enter>y"       "move to inbox"
+macro index,pager sw "<save-message>=Wichtig<enter>y"     "move to important"
+macro index,pager sj "<save-message>=JKU<enter>y"         "move to JKU"
+macro index,pager so "<save-message>=Other<enter>y"       "move to Other"
+macro index,pager s? "<save-message>?"                    "move to mailbox..."
 
 # Actions
 # ----------------------------------------------------
 
 bind index,pager    a   group-reply
-bind index          \Cm   mail
+bind index          m   mail
 
 # macro index,pager    gx  "<pipe-message>urlview<Enter>"                                   "call urlview to extract URLs out of a message"
 # macro attach,compose gx  "<pipe-entry>urlview<Enter>"                                     "call urlview to extract URLs out of a message"
