@@ -70,7 +70,7 @@ macro index,pager so "<save-message>=Other<enter>y"       "move to Other"
 macro index,pager s? "<save-message>?"                    "move to mailbox..."
 
 # look at urls
-macro index,pager         \Cs       "<pipe-message> urlscan<Enter>"
+macro index,pager         \Cs       "<pipe-message> urlscan<Enter>"       "call urlscan to extract URLs"
 
 # Actions
 # ----------------------------------------------------
