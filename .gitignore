@@ -22,6 +22,8 @@
 !git/*
 !/mako
 !mako/*
+!/ghostty
+!ghostty/*
 
 # special handling for nchat
 !/nchat
