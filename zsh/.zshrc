@@ -80,7 +80,7 @@ alias lx="ls -a -h --color=always -v"
 alias lxs="ls -a -h -l --color=always --group-directories-first -v | less -R"
 alias gs="git status"
 alias gd="git diff"
-alias ga="git add --all"
+alias ga="git add"
 alias gc="git commit"
 alias gco="git checkout"
 alias gb="git branch"
@@ -110,6 +110,7 @@ alias gcc-arm-no='arm-none-eabi-gcc -static -nostdlib'
 alias gdb-arm='arm-none-eabi-gdb'
 alias objdump='objdump -M intel --no-show-raw-insn'
 alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
+alias draw='lorien'
 
 eval $(thefuck --alias)
 
@@ -156,10 +157,6 @@ function create-submission () {
   fi
 }
 
-function zat () {
-  zathura $* &; disown
-}
-
 function tx () {
   if [ $# -eq 0 ]
   then
@@ -195,6 +192,15 @@ function Rrender () {
   else
     Rscript -e "rmarkdown::render('$1')"
   fi
+}
+
+function vtanim () {
+  SPEED=75
+  if [ $# -eq 2 ]
+  then
+    SPEED=$2
+  fi
+  cat $1 | pv --quiet --line-mode --rate-limit ${SPEED}
 }
 
 function zmk_build_both () {
