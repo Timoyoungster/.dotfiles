@@ -12,3 +12,11 @@ theme = Framer
 
 font-family = "Cascadia Mono"
 font-size = 18
+
+mouse-hide-while-typing = true
+
+# for macos use macos-titlebar-style = hidden
+window-decoration = false
+window-padding-x = 8
+window-padding-y = 8
+window-padding-balance = true
