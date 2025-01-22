@@ -112,6 +112,7 @@ alias objdump='objdump -M intel --no-show-raw-insn'
 alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
 alias draw='lorien'
 alias sshot='hyprshot -m region --clipboard-only'
+alias txmisc='tmux new -As "misc" nchat ";" splitw -h tclock ";" splitw -v'
 
 eval $(thefuck --alias)
 
