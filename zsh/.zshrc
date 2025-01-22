@@ -113,6 +113,9 @@ alias objdump-arm='arm-none-eabi-objdump --no-show-raw-insn'
 alias draw='lorien'
 alias sshot='hyprshot -m region --clipboard-only'
 alias txmisc='tmux new -As "misc" nchat ";" splitw -h tclock ";" splitw -v'
+alias zb='zig build'
+alias zbr='zig build run'
+alias zbt='zig build test'
 
 eval $(thefuck --alias)
 
