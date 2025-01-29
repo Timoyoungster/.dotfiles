@@ -116,6 +116,7 @@ alias txmisc='tmux new -As "misc" nchat ";" splitw -h tclock ";" splitw -v'
 alias zb='zig build'
 alias zbr='zig build run'
 alias zbt='zig build test'
+alias vim='nvim'
 
 eval $(thefuck --alias)
 
@@ -179,15 +180,6 @@ function tx () {
 function venv () {
   source ~/.pythonvenv/$1/bin/activate || return
   echo "Activated python venv '$1'!"
-}
-
-function vim () {
-  if [ $# -eq 0 ]
-  then
-    nvim .
-  else
-    nvim $@
-  fi
 }
 
 function Rrender () {
