@@ -24,6 +24,8 @@
 !mako/*
 !/ghostty
 !ghostty/*
+!/feh
+!feh/*
 
 # special handling for nchat
 !/nchat
