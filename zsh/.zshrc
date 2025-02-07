@@ -117,6 +117,7 @@ alias zb='zig build'
 alias zbr='zig build run'
 alias zbt='zig build test'
 alias vim='nvim'
+alias mu='mupdf'
 
 eval $(thefuck --alias)
 
