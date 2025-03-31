@@ -127,6 +127,10 @@ alias mu='mupdf'
 eval $(thefuck --alias)
 
 function uni () {
+  cd ~/github/jku
+  git pull
+  cd -
+
   DIR=""
   if [ $# -eq 1 ]
   then
