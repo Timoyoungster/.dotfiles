@@ -26,6 +26,8 @@
 !ghostty/*
 !/feh
 !feh/*
+!/tofi
+!tofi/*
 
 # special handling for nchat
 !/nchat
