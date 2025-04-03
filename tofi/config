@@ -10,3 +10,4 @@ outline-width = 0
 border-width = 0
 background-color = #101216
 selection-color = #5FD7FF
+terminal = ghostty
