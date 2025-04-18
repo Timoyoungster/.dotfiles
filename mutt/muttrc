@@ -18,6 +18,15 @@ set pager_stop = yes     # dont go to next mail on page down/up
 
 set delete = yes
 
+set mailcap_path = ~/.config/mutt/mailcap
+
+########
+# View #
+########
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
 ############
 # Keybinds #
 ############
