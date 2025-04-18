@@ -64,12 +64,12 @@ bind index               <Backtab> previous-new-then-unread
 # Go to folder...
 macro index,pager gi "<change-folder>=INBOX<enter>"       "open inbox"
 macro index,pager gd "<change-folder>$postponed<enter>"   "open drafts"
-macro index,pager gs "<change-folder>=[Gmail]/Sent Mail<enter>"    "open sent"
+macro index,pager gs "<change-folder>$record<enter>"      "open sent"
 macro index,pager gt "<change-folder>$trash<enter>"       "open trash"
 macro index,pager gw "<change-folder>=Wichtig<enter>"     "open important"
 macro index,pager gj "<change-folder>=JKU<enter>"         "open JKU"
 macro index,pager go "<change-folder>=Other<enter>"       "open Other"
-macro index,pager gf "<change-folder>?"                   "open mailbox..."
+macro index,pager g? "<change-folder>?"                   "open mailbox..."
 
 # move to folder...
 macro index,pager si "<save-message>=INBOX<enter>y"       "move to inbox"
